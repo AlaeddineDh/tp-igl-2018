@@ -24,7 +24,6 @@ public class StringHelper {
     }
 
     /**
-     *
      * @param str la chaine ou on doit enlever les mots vides
      * @return la chaine après transformation
      */
@@ -36,6 +35,28 @@ public class StringHelper {
         str=str.replaceAll(" non "," ").replace("non "," ").replace(" non"," ");
 
         return str;
+    }
+  
+  /**
+     * @param word le mot dont on doit calculer les occurrences
+     * @param str la chaine qui contient le mot dont on veut calculer l'occurence
+     * @return
+     * @throws ExceptionTexteVide
+     */
+    public int Occurrence(String word,String str) throws ExceptionTexteVide{
+
+        int occ=0;
+
+        if (str.length()==0) throw new ExceptionTexteVide();
+        else {
+            Pattern p = Pattern.compile(word);
+            Matcher m = p.matcher( str );
+            while (m.find()) {
+                occ++;
+            }
+        }
+
+        return occ;
     }
   
   
