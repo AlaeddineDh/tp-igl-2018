@@ -4,6 +4,7 @@
  */
 public class StringHelper {
   
+  
     /**
      * @param V le tableau qui contient les chaines de caractes
      * @param length la taille de tableau
