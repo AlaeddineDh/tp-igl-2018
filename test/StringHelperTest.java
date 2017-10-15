@@ -24,6 +24,16 @@ public class StringHelperTest {
         assertEquals(expected, actual);
     }
 
-
+    @Test
+    public void testApplyFormula() {
+        String expected = "bcdeaCBA";
+        String actuals = stringHelper.applyFormula("abcdzBAZ", new FormulaApplier() {
+            @Override
+            public char applyFormula(char c) {
+                return Character.isAlphabetic( c + 1) ? (char) (c + 1) : (char) (c - 25);
+            }
+        });
+        assertEquals(expected, actuals);
+    }
 }
 
