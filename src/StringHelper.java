@@ -32,6 +32,7 @@ public class StringHelper {
 
     /**
      * Mettre en majiscule la premiere lettre de chaque phrase de str
+     *
      * @param str chaine a transformer
      * @return la chaine str avec premiere lettre de chaque phranse en majiscule
      */
@@ -54,6 +55,7 @@ public class StringHelper {
 
     /**
      * Retourne la position du premier caractere alphabetique dans str qui vient apres la position pos
+     *
      * @param str chaine de caracteres
      * @param pos position apres laquele on cherche le premier caractere
      * @return position du prmeier caractere alphabetique
