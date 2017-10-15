@@ -69,4 +69,18 @@ public class StringHelper {
             return -1;
         }
     }
+
+    /**
+     * applique une formula precise par applier sur touts les caracteres de str
+     * @param str chaine sur laquelle on applique la formule
+     * @param applier classe qui implemente l'interface FormulaApplier
+     * @return chaine apres application de la formule
+     */
+    public String applyFormula(String str, FormulaApplier applier){
+        StringBuilder builder = new StringBuilder(str);
+        for (int i =0; i< str.length();i++){
+            builder.setCharAt(i,applier.applyFormula(str.charAt(i)));
+        }
+        return builder.toString();
+    }
 }
