@@ -21,6 +21,21 @@ public class StringHelper {
         return result;
 
     }
+
+    /**
+     *
+     * @param str la chaine ou on doit enlever les mots vides
+     * @return la chaine après transformation
+     */
+    public String Eliminate(String str){
+
+        str=str.replaceAll(" ou "," ").replace("ou "," ").replace(" ou"," ");
+        str=str.replaceAll(" et "," ").replace("et "," ").replace(" et"," ");
+        str=str.replaceAll(" à "," ").replace("à "," ").replace(" à"," ");
+        str=str.replaceAll(" non "," ").replace("non "," ").replace(" non"," ");
+
+        return str;
+    }
   
   
   
