@@ -9,7 +9,7 @@ public class StringHelper {
   
   
     /**
-     *joint les élèment d'un tableau avec un sépararteur
+     *joint les élèment d'un tableau avec un sépararteur qui ";"
      *
      * @param V le tableau qui contient les chaines de caractes
      * @param length la taille de tableau
