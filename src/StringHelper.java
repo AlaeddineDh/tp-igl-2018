@@ -9,6 +9,8 @@ public class StringHelper {
   
   
     /**
+     *joint les élèment d'un tableau avec un sépararteur
+     *
      * @param V le tableau qui contient les chaines de caractes
      * @param length la taille de tableau
      * @return une chaine qi contient les elements du tabeau entre eux un séparateur
@@ -28,6 +30,8 @@ public class StringHelper {
     }
 
     /**
+     *éliminer les mots vides dans une chaine 
+     *
      * @param str la chaine ou on doit enlever les mots vides
      * @return la chaine après transformation
      * Exemple d'utilisation: "je vais à la poste ou à la mairie" ==> "je vais la poste la mairie"
@@ -43,6 +47,8 @@ public class StringHelper {
     }
   
   /**
+     *calculer le nombre d'ocuurrence d'un mot dans une chaine
+     *
      * @param word le mot dont on doit calculer les occurrences
      * @param str la chaine qui contient le mot dont on veut calculer l'occurence
      * @return
