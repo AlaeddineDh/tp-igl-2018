@@ -67,11 +67,13 @@ public class StringHelper {
   
 
     /**
-     * fractioner une chaine de caracteres en utilisant un caractere de separation
+     * fractioner une chaine de caracteres en utilisant un caractere de séparation. <br/>
+     * <strong>Exemple:</strong> pour la chaine <strong>"sep1,sep2,sep3"</strong> et le séparateur <strong>','</strong> va retourner le vecteur
+     * <strong>["sep1","sep2","sep3"]</strong>
      *
      * @param str chaine a fractioner
-     * @param sep caractere de separation
-     * @return un tableau de sous-chaines separees
+     * @param sep caractère de séparation
+     * @return un tableau de sous-chaines séparées
      */
     public String[] split(String str, char sep) {
         String subStr = "";
@@ -90,10 +92,12 @@ public class StringHelper {
     }
 
     /**
-     * Mettre en majiscule la premiere lettre de chaque phrase de str
+     * Mettre en majiscule la première lettre de chaque phrase de str. <br/>
+     * <strong>Exemple:</strong>
+     * "je m'appele Alaeddine. je suis un étudiant de l'esi (c'est une école)" ==> "<strong>J</strong>e m'appele Alaeddine. <strong>J</strong>e suis un étudiant de l'esi (<strong>C</strong>'est une école)"
      *
-     * @param str chaine a transformer
-     * @return la chaine str avec premiere lettre de chaque phranse en majiscule
+     * @param str chaine à transformer
+     * @return la chaine str avec première lettre de chaque phrase en majiscule
      */
     public String capitalize(String str) {
         final String seperators = ".:(";
@@ -113,11 +117,12 @@ public class StringHelper {
     }
 
     /**
-     * Retourne la position du premier caractere alphabetique dans str qui vient apres la position pos
-     *
-     * @param str chaine de caracteres
-     * @param pos position apres laquele on cherche le premier caractere
-     * @return position du prmeier caractere alphabetique
+     * Retourne la position du premier caractère alphabétique dans str qui vient après la position pos
+     * <strong>Exemple: </strong>
+     * pour la cahine "   ( .. a" avec position 0 , va retourner 8 , c'est la position du caractère "a"
+     * @param str chaine de caractères
+     * @param pos position après laquele on cherche le premier caractère
+     * @return position du prmeier caractère alphabétique
      */
     private int positionOfFirstLetter(String str, int pos) {
         Pattern p = Pattern.compile("\\p{L}");
@@ -130,7 +135,10 @@ public class StringHelper {
     }
 
     /**
-     * applique une formula precise par applier sur touts les caracteres de str
+     * applique une formule précisée par <strong>{@link FormulaApplier applier}</strong> sur touts les caractères de str
+     * <strong>Exemple: </strong> si <strong>{@link FormulaApplier applier}</strong> donne une formule qui remplace un caractère par son
+     * suivant , la chaine "abcd" va retourner "bcde"
+     *
      * @param str chaine sur laquelle on applique la formule
      * @param applier classe qui implemente l'interface FormulaApplier
      * @return chaine apres application de la formule
