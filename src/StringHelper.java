@@ -67,8 +67,8 @@ public class StringHelper {
   
 
     /**
-     * fractioner une chaine de caracteres en utilisant un caractere de séparation. <br/>
-     * <strong>Exemple:</strong> pour la chaine <strong>"sep1,sep2,sep3"</strong> et le séparateur <strong>','</strong> va retourner le vecteur
+     * fractioner une chaine de caracteres en utilisant un caractere de séparation. <br>
+     * <strong>Exemple:</strong> pour la chaine <strong>"sep1,sep2,sep3"</strong> et le séparateur <strong>','</strong> on retourne le vecteur
      * <strong>["sep1","sep2","sep3"]</strong>
      *
      * @param str chaine a fractioner
@@ -92,9 +92,9 @@ public class StringHelper {
     }
 
     /**
-     * Mettre en majiscule la première lettre de chaque phrase de str. <br/>
+     * Mettre en majiscule la première lettre de chaque phrase de str. <br>
      * <strong>Exemple:</strong>
-     * "je m'appele Alaeddine. je suis un étudiant de l'esi (c'est une école)" ==> "<strong>J</strong>e m'appele Alaeddine. <strong>J</strong>e suis un étudiant de l'esi (<strong>C</strong>'est une école)"
+     * "je m'appele Alaeddine. je suis un étudiant de l'esi (c'est une école)" va donner "<strong>J</strong>e m'appele Alaeddine. <strong>J</strong>e suis un étudiant de l'esi (<strong>C</strong>'est une école)"
      *
      * @param str chaine à transformer
      * @return la chaine str avec première lettre de chaque phrase en majiscule
@@ -117,7 +117,7 @@ public class StringHelper {
     }
 
     /**
-     * Retourne la position du premier caractère alphabétique dans str qui vient après la position pos
+     * Retourne la position du premier caractère alphabétique dans str qui vient après la position pos<br>
      * <strong>Exemple: </strong>
      * pour la cahine "   ( .. a" avec position 0 , va retourner 8 , c'est la position du caractère "a"
      * @param str chaine de caractères
@@ -135,7 +135,7 @@ public class StringHelper {
     }
 
     /**
-     * applique une formule précisée par <strong>{@link FormulaApplier applier}</strong> sur touts les caractères de str
+     * applique une formule précisée par <strong>{@link FormulaApplier applier}</strong> sur touts les caractères de str.<br>
      * <strong>Exemple: </strong> si <strong>{@link FormulaApplier applier}</strong> donne une formule qui remplace un caractère par son
      * suivant , la chaine "abcd" va retourner "bcde"
      *
