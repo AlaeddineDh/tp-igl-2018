@@ -51,7 +51,7 @@ public class StringHelper {
      *
      * @param word le mot dont on doit calculer les occurrences
      * @param str la chaine qui contient le mot dont on veut calculer l'occurence
-     * @return
+     * @return le nombre d'ocuurrence
      * @throws ExceptionTexteVide
      *Exemple d'utilisaion: "je mange une pomme pomme" avec word=pomme donne occurence=2
      */
