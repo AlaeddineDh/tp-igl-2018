@@ -12,6 +12,7 @@ public class StringHelper {
      * @param V le tableau qui contient les chaines de caractes
      * @param length la taille de tableau
      * @return une chaine qi contient les elements du tabeau entre eux un séparateur
+     * Exemple d'utilisation: [str1,str2,str3]====>"str1;str2;str3"
      */
     public String Join(String V[],int length){
 
@@ -29,6 +30,7 @@ public class StringHelper {
     /**
      * @param str la chaine ou on doit enlever les mots vides
      * @return la chaine après transformation
+     * Exemple d'utilisation: "je vais à la poste ou à la mairie" ==> "je vais la poste la mairie"
      */
     public String Eliminate(String str){
 
@@ -45,6 +47,7 @@ public class StringHelper {
      * @param str la chaine qui contient le mot dont on veut calculer l'occurence
      * @return
      * @throws ExceptionTexteVide
+     *Exemple d'utilisaion: "je mange une pomme pomme" avec word=pomme ==> occurence=2
      */
     public int Occurrence(String word,String str) throws ExceptionTexteVide{
 
