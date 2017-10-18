@@ -6,63 +6,62 @@ import java.util.regex.Pattern;
  * Created by FATEN on 13/10/2017.
  */
 public class StringHelper {
-  
-  
+
+
     /**
-     *joint les élèment d'un tableau avec un sépararteur qui ";"
+     * joint les élèment d'un tableau avec un sépararteur qui ";"
      *
-     * @param V le tableau qui contient les chaines de caractes
+     * @param V      le tableau qui contient les chaines de caractes
      * @param length la taille de tableau
      * @return une chaine qi contient les elements du tabeau entre eux un séparateur
      * Exemple d'utilisation: [str1,str2,str3] donne "str1;str2;str3"
      */
-    public String Join(String V[],int length){
+    public String Join(String V[], int length) {
 
-        String result="";
+        String result = "";
 
-        for (int i=0;i<length-1;i++){
-            result=result+V[i]+";";
+        for (int i = 0; i < length - 1; i++) {
+            result = result + V[i] + ";";
         }
-        result=result+V[length-1];
+        result = result + V[length - 1];
 
         return result;
 
     }
 
     /**
-     *éliminer les mots vides dans une chaine 
+     * éliminer les mots vides dans une chaine
      *
      * @param str la chaine ou on doit enlever les mots vides
      * @return la chaine après transformation
      * Exemple d'utilisation: "je vais à la poste ou à la mairie" donne "je vais la poste la mairie"
      */
-    public String Eliminate(String str){
+    public String Eliminate(String str) {
 
-        str=str.replaceAll(" ou "," ").replace("ou "," ").replace(" ou"," ");
-        str=str.replaceAll(" et "," ").replace("et "," ").replace(" et"," ");
-        str=str.replaceAll(" à "," ").replace("à "," ").replace(" à"," ");
-        str=str.replaceAll(" non "," ").replace("non "," ").replace(" non"," ");
+        str = str.replaceAll(" ou ", " ").replace("ou ", " ").replace(" ou", " ");
+        str = str.replaceAll(" et ", " ").replace("et ", " ").replace(" et", " ");
+        str = str.replaceAll(" à ", " ").replace("à ", " ").replace(" à", " ");
+        str = str.replaceAll(" non ", " ").replace("non ", " ").replace(" non", " ");
 
         return str;
     }
-  
-  /**
-     *calculer le nombre d'ocuurrence d'un mot dans une chaine
+
+    /**
+     * calculer le nombre d'ocuurrence d'un mot dans une chaine
      *
      * @param word le mot dont on doit calculer les occurrences
-     * @param str la chaine qui contient le mot dont on veut calculer l'occurence
+     * @param str  la chaine qui contient le mot dont on veut calculer l'occurence
      * @return le nombre d'ocuurrence
-     * @throws ExceptionTexteVide
-     *Exemple d'utilisaion: "je mange une pomme pomme" avec word=pomme donne occurence=2
+     * @throws ExceptionTexteVide Exemple d'utilisaion: "je mange une pomme pomme" avec word=pomme donne occurence=2
      */
-    public int Occurrence(String word,String str) throws ExceptionTexteVide{
+    public int Occurrence(String word, String str) throws ExceptionTexteVide {
 
-        int occ=0;
+        int occ = 0;
 
-        if (str.length()==0) throw new ExceptionTexteVide();
+        if (str.length() == 0) throw new ExceptionTexteVide();
         else {
             Pattern p = Pattern.compile(word);
-            Matcher m = p.matcher( str );
+            Matcher m = p.matcher(str);
             while (m.find()) {
                 occ++;
             }
@@ -70,7 +69,7 @@ public class StringHelper {
 
         return occ;
     }
-  
+
 
     /**
      * fractioner une chaine de caracteres en utilisant un caractere de séparation. <br>
@@ -106,7 +105,7 @@ public class StringHelper {
      * @return la chaine str avec première lettre de chaque phrase en majiscule
      */
     public String capitalize(String str) {
-        final String seperators = ".:(";
+        final String seperators = ".:()?!;";
         if (str == null || str.length() <= 0) return null;
         StringBuilder sb = new StringBuilder(str);
         int p = positionOfFirstLetter(str, 0);
@@ -114,7 +113,11 @@ public class StringHelper {
         for (int i = p + 1; i < str.length(); i++) {
             if (seperators.contains(Character.toString(str.charAt(i)))) {
                 i = positionOfFirstLetter(str, i);
-                sb.setCharAt(i, Character.toUpperCase(str.charAt(i)));
+                if (i != -1) {
+                    sb.setCharAt(i, Character.toUpperCase(str.charAt(i)));
+                }else
+                    // pas de lettre , donc on a finis
+                    break;
             } else {
                 sb.setCharAt(i, Character.toLowerCase(str.charAt(i)));
             }
@@ -126,6 +129,7 @@ public class StringHelper {
      * Retourne la position du premier caractère alphabétique dans str qui vient après la position pos<br>
      * <strong>Exemple: </strong>
      * pour la cahine "   ( .. a" avec position 0 , va retourner 8 , c'est la position du caractère "a"
+     *
      * @param str chaine de caractères
      * @param pos position après laquele on cherche le premier caractère
      * @return position du prmeier caractère alphabétique
@@ -145,14 +149,14 @@ public class StringHelper {
      * <strong>Exemple: </strong> si <strong>{@link FormulaApplier applier}</strong> donne une formule qui remplace un caractère par son
      * suivant , la chaine "abcd" va retourner "bcde"
      *
-     * @param str chaine sur laquelle on applique la formule
+     * @param str     chaine sur laquelle on applique la formule
      * @param applier classe qui implemente l'interface FormulaApplier
      * @return chaine apres application de la formule
      */
-    public String applyFormula(String str, FormulaApplier applier){
+    public String applyFormula(String str, FormulaApplier applier) {
         StringBuilder builder = new StringBuilder(str);
-        for (int i =0; i< str.length();i++){
-            builder.setCharAt(i,applier.applyFormula(str.charAt(i)));
+        for (int i = 0; i < str.length(); i++) {
+            builder.setCharAt(i, applier.applyFormula(str.charAt(i)));
         }
         return builder.toString();
     }
