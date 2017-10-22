@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 /**
  * Created by FATEN on 13/10/2017.
  */
-public class StringHelper {
+public class StringHelper2 {
   
   
     /**
